@@ -22,4 +22,4 @@ You can see the trace events in X-Ray dashboard:
 
 X-Ray SDK will load the configuration injected by the AWS Lambda service and automatically send invocation and custom tracing to X-Ray service:
 
-![Trace detail including invocation details and custom segments](./.docs/xray-trace-detail.png)
+![Trace detail including invocation details and custom segments](./.docs/xray-trace-details.png)
