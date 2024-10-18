@@ -8,18 +8,18 @@ When your AWS Lambda function finishes processing an event, Lambda sends metrics
 
 https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics.html
 
-![Invocation Metrics](./docs/metrics.png)
+![Invocation Metrics](./.docs/metrics.png)
 
 ## X-Ray Daemon and Tracing
 
 When you enable X-Ray Active Tracing, AWS Lambda service will inject X-Ray Daemon configuration and sends traces to X-Ray automatically.
 
-![X-Ray Active Tracing](./docs/xray-lambda-daemon-configuration.png)
+![X-Ray Active Tracing](./.docs/xray-lambda-daemon-configuration.png)
 
 You can see the trace events in X-Ray dashboard:
 
-![AWS Lambda function traces in X-Ray dashboard](./docs/xray-traces.png)
+![AWS Lambda function traces in X-Ray dashboard](./.docs/xray-traces.png)
 
 X-Ray SDK will load the configuration injected by the AWS Lambda service and automatically send invocation and custom tracing to X-Ray service:
 
-![Trace detail including invocation details and custom segments](./docs/xray-trace-detail.png)
+![Trace detail including invocation details and custom segments](./.docs/xray-trace-detail.png)
