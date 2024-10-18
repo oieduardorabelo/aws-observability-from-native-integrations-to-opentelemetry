@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "aws-xray-sdk-core": "^3.10.1"
+  }
+}
