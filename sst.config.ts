@@ -3,14 +3,27 @@
 export default $config({
   app(input) {
     return {
-      name: "aws-lambda-native-integration",
+      name: "aws-lambda-opentelemetry-with-adot",
       removal: input?.stage === "production" ? "retain" : "remove",
       home: "aws",
     };
   },
   async run() {
+    const AWS_REGION = process.env.AWS_REGION;
+
     new sst.aws.Function("MyFunction", {
       handler: "functions/hello.handler",
+      architecture: "x86_64",
+      layers: [`arn:aws:lambda:${AWS_REGION}:901920570463:layer:aws-otel-nodejs-amd64-ver-1-18-1:4`],
+      environment: {
+        AWS_LAMBDA_EXEC_WRAPPER: "/opt/otel-handler",
+      },
+      nodejs: {
+        format: "cjs",
+        esbuild: {
+          external: ["@opentelemetry/api"],
+        },
+      },
       transform: {
         function: {
           tracingConfig: {
@@ -18,7 +31,10 @@ export default $config({
           },
         },
         role: {
-          managedPolicyArns: ["arn:aws:iam::aws:policy/AWSXRayDaemonWriteAccess"],
+          managedPolicyArns: [
+            "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+            "arn:aws:iam::aws:policy/AWSXRayDaemonWriteAccess",
+          ],
         },
       },
     });

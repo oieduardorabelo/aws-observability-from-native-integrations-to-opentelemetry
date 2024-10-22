@@ -1,12 +1,15 @@
-import xray from "aws-xray-sdk-core";
+import opentelemetry from "@opentelemetry/api";
 
-export const handler = async (event, context) => {
-  const segment = xray.getSegment();
-  const customSegment = segment.addNewSubsegment("custom-segment");
-  xray.setSegment(customSegment);
+const tracer = opentelemetry.trace.getTracer(process.env.AWS_LAMBDA_FUNCTION_NAME as string);
+
+exports.handler = async (event, context) => {
+  const customSpan = tracer.startSpan("custom-span");
+
   console.log(JSON.stringify(event, null, 2));
   console.log(JSON.stringify(context, null, 2));
   console.log(JSON.stringify(process.env, null, 2));
+
   await new Promise((resolve) => setTimeout(resolve, 3000));
-  customSegment.close();
+
+  customSpan.end();
 };

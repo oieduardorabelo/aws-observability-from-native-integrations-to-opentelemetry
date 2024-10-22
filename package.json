@@ -6,6 +6,6 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "aws-xray-sdk-core": "^3.10.1"
+    "@opentelemetry/api": "^1.9.0"
   }
 }
