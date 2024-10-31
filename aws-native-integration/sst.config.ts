@@ -11,21 +11,9 @@ export default $config({
 	async run() {
 		const AWS_REGION = process.env.AWS_REGION;
 
-		new sst.aws.Function("MyFunction", {
-			handler: "functions/hello.handler",
+		new sst.aws.Function("NativeIntegration", {
+			handler: "functions/native-integration.handler",
 			architecture: "x86_64",
-			layers: [
-				`arn:aws:lambda:${AWS_REGION}:901920570463:layer:aws-otel-nodejs-amd64-ver-1-18-1:4`,
-			],
-			environment: {
-				AWS_LAMBDA_EXEC_WRAPPER: "/opt/otel-handler",
-			},
-			nodejs: {
-				format: "cjs",
-				esbuild: {
-					external: ["@opentelemetry/api"],
-				},
-			},
 			transform: {
 				function: {
 					tracingConfig: {

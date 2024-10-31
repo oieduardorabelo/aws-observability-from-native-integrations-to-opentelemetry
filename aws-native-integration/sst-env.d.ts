@@ -6,5 +6,9 @@ import "sst"
 export {}
 declare module "sst" {
   export interface Resource {
+    "NativeIntegration": {
+      "name": string
+      "type": "sst.aws.Function"
+    }
   }
 }

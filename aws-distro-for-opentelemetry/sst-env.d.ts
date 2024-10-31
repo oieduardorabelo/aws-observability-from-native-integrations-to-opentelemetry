@@ -6,5 +6,9 @@ import "sst"
 export {}
 declare module "sst" {
   export interface Resource {
+    "Adot": {
+      "name": string
+      "type": "sst.aws.Function"
+    }
   }
 }
