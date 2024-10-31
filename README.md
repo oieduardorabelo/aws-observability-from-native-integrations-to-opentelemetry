@@ -1,25 +1,15 @@
-# AWS Lambda native integration with CloudWatch and X-Ray
+# AWS Observability from Native Integrations to OpenTelemetry
 
-This code example is using [SST Ion](https://sst.dev/) to deploy a single function in AWS Lambda to showcase the native integration with CloudWatch (for logs and metrics) and X-Ray (for tracing).
+Example code for the AWS Fundamentals article:
 
-## Invocation Metrics
+- __LINK_TO_ARTICLE__
 
-When your AWS Lambda function finishes processing an event, Lambda sends metrics about the invocation to Amazon CloudWatch. There is no charge for these metrics.
+We have two example projects:
 
-https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics.html
+- [AWS Native Integration](./aws-native-integration/) showing X-Ray and CloudWatch native integration with AWS Lambda runtime
 
-![Invocation Metrics](./.docs/metrics.png)
+- [AWS Distro for OpenTelemetry](./aws-distro-for-opentelemetry/) showing how to use the AWS distribution of OpenTelemetry configuration for AWS Lambda runtime
 
-## X-Ray Daemon and Tracing
+Our goal is to provide more examples of OpenTelemetry in AWS environments. Stay tuned!
 
-When you enable X-Ray Active Tracing, AWS Lambda service will inject X-Ray Daemon configuration and sends traces to X-Ray automatically.
-
-![X-Ray Active Tracing](./.docs/xray-lambda-daemon-configuration.png)
-
-You can see the trace events in X-Ray dashboard:
-
-![AWS Lambda function traces in X-Ray dashboard](./.docs/xray-traces.png)
-
-X-Ray SDK will load the configuration injected by the AWS Lambda service and automatically send invocation and custom tracing to X-Ray service:
-
-![Trace detail including invocation details and custom segments](./.docs/xray-trace-details.png)
+We invite you to join our Discord community to discuss other solutions and demos. We are actively working to make that happen!
