@@ -12,4 +12,6 @@ We have two example projects:
 
 Our goal is to provide more examples of OpenTelemetry in AWS environments. Stay tuned!
 
-We invite you to join our Discord community to discuss other solutions and demos. We are actively working to make that happen!
+We invite you to [join our Discord community](https://link.awsfundamentals.com/1HMSp4E) to discuss other solutions and demos. 
+
+We are actively working to make that happen!

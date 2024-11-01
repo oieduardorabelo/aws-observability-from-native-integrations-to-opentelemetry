@@ -1,4 +1,4 @@
-import opentelemetry from "@opentelemetry/api";
+import * as opentelemetry from "@opentelemetry/api";
 
 const tracer = opentelemetry.trace.getTracer(
 	process.env.AWS_LAMBDA_FUNCTION_NAME as string,
