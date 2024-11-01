@@ -1,7 +1,5 @@
 # AWS Lambda native integration with CloudWatch and X-Ray
 
-AWS Lambda example for the native integration with CloudWatch and X-Ray.
-
 This code example is using [SST Ion](https://sst.dev/) to deploy a single function in AWS Lambda to showcase the native integration with CloudWatch (for logs and metrics) and X-Ray (for tracing).
 
 ## Invocation Metrics
