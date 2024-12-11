@@ -2,7 +2,7 @@
 
 Example code for the AWS Fundamentals article:
 
-- __LINK_TO_ARTICLE__
+- https://blog.awsfundamentals.com/opentelemetry-on-aws
 
 We have two example projects:
 
